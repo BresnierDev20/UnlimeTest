@@ -53,7 +53,7 @@ struct LoginView: View {
                     SingUpDivider(label: "Or")
                     
                     Button(action: {
-                        if viewModel.password == initialPassword &&  viewModel.password == initialEmail {
+                        if viewModel.password == initialPassword &&  viewModel.email == initialEmail {
                             
                             viewModel.goToHome = true
                         }else {
