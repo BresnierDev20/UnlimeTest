@@ -2,7 +2,7 @@
 //  UnlimeTestApp.swift
 //  UnlimeTest
 //
-//  Created by Bresnier Moreno on 7/6/24.
+//  Created by Angelbert Castro on 7/6/24.
 //
 
 import SwiftUI
@@ -11,7 +11,7 @@ import SwiftUI
 struct UnlimeTestApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            AuthView()
         }
     }
 }
