@@ -15,10 +15,10 @@ struct HomeView: View {
         VStack {
             ScrollView(.vertical, showsIndicators: false) {
                 VStack(alignment: .leading) {
-                    Text("Discover")
-                        .font(.largeTitle)
-                        .bold()
-                        .foregroundColor(.white)
+//                    Text("Discover")
+//                        .font(.largeTitle)
+//                        .bold()
+//                        .foregroundColor(.white)
                     
 //                    ScrollView(.horizontal, showsIndicators: false) {
 //                        HStack(spacing: Constants.spacing) {
