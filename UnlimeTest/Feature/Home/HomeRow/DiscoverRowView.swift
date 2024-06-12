@@ -16,7 +16,7 @@ struct DiscoverRowView: View {
             
             KFImage(URL(string: "https://image.tmdb.org/t/p/w500/\(movie.poster_path ?? "")"))
                 .resizable()
-                .scaledToFill()
+                .scaledToFit()
                 .frame(maxWidth: .infinity)
                 .frame(maxHeight: .infinity)
         }

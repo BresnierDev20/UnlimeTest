@@ -6,27 +6,25 @@
 //
 
 import SwiftUI
+import Factory
+import Stinsen
 
 struct LoginView: View {
-    @StateObject var viewModel: LoginViewModel = .init()
     @Environment(\.presentationMode) private var presentation
+    @EnvironmentObject var coordinator: AuthCoordinator.Router
+    @StateObject var viewModel: LoginViewModel = .init()
     
-    var initialEmail: String
-    var initialPassword: String
+    var navigationData: NavigationData
     
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading)  {
-                NavigationLink(destination: HomeView(), isActive: $viewModel.goToHome){}
-                NavigationLink(destination: SignUpView(), isActive: $viewModel.goToSingUp){}
-                
+            VStack(alignment: .leading){
                 HStack {
                     Spacer()
-                    
                     Image(Images.logo)
-                    
                     Spacer()
-                }.padding()
+                }
+                .padding()
               
                 VStack(alignment: .leading) {
                     Text("Login")
@@ -40,23 +38,21 @@ struct LoginView: View {
                 .padding()
 
                 VStack{
-                    InputField(text: "Email", value: $viewModel.email , description: "Enter your email", isFieldSelected: viewModel.isEmailSelected, isSelectd: true,
-                               onTapGesture: {
+                    InputField(text: "Email", value: $viewModel.email , description: "Enter your email", isFieldSelected: viewModel.isEmailSelected, isSelectd: true,onTapGesture: {
                                 viewModel.isEmailSelected = true
                                 viewModel.isSecurySelected = false
-                    }, onTapSelect: {
-                                                viewModel.isEmailSelected = false
-                    })
+                    }, onTapSelect: { viewModel.isEmailSelected = false})
                     
                     password
-                    
                     SingUpDivider(label: "Or")
                     
                     Button(action: {
-                        if viewModel.password == initialPassword &&  viewModel.email == initialEmail {
-                            
-                            viewModel.goToHome = true
+                        if viewModel.password == navigationData.password &&  viewModel.email == navigationData.email {
+                            coordinator.route(to: \.home)
+                            viewModel.isAuthenticated = true
+
                         }else {
+                            viewModel.isAuthenticated = false
                             viewModel.loginError = true
                         }
                     }) {
@@ -80,22 +76,21 @@ struct LoginView: View {
                         .customFont(.semiBold, size: 16)
                         .foregroundColor(.backgroundRed)
                         .onTapGesture {
-                            viewModel.goToSingUp = true
+                            coordinator.route(to: \.signup)
                         }
                       Spacer()
                     }
                     .padding(.top, 12)
-                    
                 }.padding()
                 
                 Spacer()
+                
             }.customNavigationBar(title: "", showBackButton: true, showNavBar: true) {
                 presentation.wrappedValue.dismiss()
             }
         }
         .background(Color.black)
         .navigationBarHidden(true)
-       
     }
     
     var password: some View {
@@ -146,8 +141,8 @@ struct LoginView: View {
       }.padding(.bottom, 30)
     }
 }
-
-#Preview {
-    SignUpView()
-}
-
+//
+//#Preview {
+//    SignUpView()
+//}
+//

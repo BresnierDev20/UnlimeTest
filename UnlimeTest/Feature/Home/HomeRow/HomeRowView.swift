@@ -16,12 +16,12 @@ struct HomeRowView: View {
     }
     
     var body: some View {
-        ZStack {
+        VStack {
             KFImage(URL(string: "https://image.tmdb.org/t/p/w500/\(movie.poster_path ?? "")"))
                 .resizable()
                 .scaledToFill()
                 .frame(maxWidth: .infinity)
-                .frame(height: Constants.imagenHeigth)
+                .frame(maxHeight: .infinity)
                 .background(Color.red)
         }
         .clipShape(RoundedRectangle(cornerRadius: Constants.clipShapeCornerRadius))

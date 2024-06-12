@@ -6,12 +6,16 @@
 //
 
 import SwiftUI
+import Factory
+import Stinsen
 
 @main
 struct UnlimeTestApp: App {
+    var mainCoordinator = Container.shared.mainNavigationCoordinator()
+    
     var body: some Scene {
         WindowGroup {
-            AuthView()
+            mainCoordinator.view()
         }
     }
 }

@@ -9,14 +9,11 @@ import SwiftUI
 
 struct AuthView: View {
     @StateObject var viewModel: AuthViewViewModel = .init()
+    @EnvironmentObject var coordinator: AuthCoordinator.Router
     
     var body: some View {
-        NavigationView {
+//        NavigationView {
             ZStack {
-                NavigationLink(destination: LoginView(initialEmail: "", initialPassword: ""), isActive: $viewModel.goToLogin){}
-                
-                NavigationLink(destination: SignUpView(), isActive: $viewModel.goToSing){}
-                
                 Image(Images.backgroundImage)
                     .resizable()
                     .scaledToFill()
@@ -41,7 +38,7 @@ struct AuthView: View {
                         .frame(width: 450)
                         
                         Button(action: {
-                            viewModel.goToSing.toggle()
+                            coordinator.route(to: \.signup)
                         }) {
                             HStack {
                                 Text("Sign in")
@@ -53,19 +50,20 @@ struct AuthView: View {
                         .filledStyle(isDisabled: true)
                         
                         Button(action: {
-                            viewModel.goToLogin.toggle()
+                            coordinator.route(to: \.login, .init(email: "", password: ""))
                         }) {
                             HStack {
                                 Text("Login")
                                     .customFont(.medium, size: 16)
                                 
-                            }.frame(width: Constants.textLoginWidth, height: Constants.textLoginHeigth)
+                            }
+                            .frame(width: Constants.textLoginWidth, height: Constants.textLoginHeigth)
                             
                         }.filledStyle(isDisabled: true)
                     }.padding(.bottom,12)
                 }
             }
-        }
+//        }
     }
 }
 

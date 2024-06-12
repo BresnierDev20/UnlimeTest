@@ -48,10 +48,9 @@ extension View {
   func customFont(_ font: Poppins, size: CGFloat, category: ContentSizeCategory) -> some View {
     self.font(.custom(font.rawValue, size: size, relativeTo: .headline))
   }
-}
-
-extension View {
+    
   func filledStyle(isDisabled: Bool) -> some View {
     modifier(PrimaryButtonModifier(isDisabled: isDisabled))
   }
 }
+

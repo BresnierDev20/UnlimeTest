@@ -6,9 +6,8 @@
 //
 
 import SwiftUI
+import Factory
 
 class AuthViewViewModel : ObservableObject {
-    @Published var isButtonEnabled = false
-    @Published var goToLogin: Bool = false
-    @Published var goToSing: Bool = false
+    @Published var isButtonEnabled = false   
 }

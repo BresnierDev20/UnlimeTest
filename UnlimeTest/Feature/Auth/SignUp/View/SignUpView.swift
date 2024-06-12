@@ -8,16 +8,14 @@
 import SwiftUI
 
 struct SignUpView: View {
-    @StateObject var viewModel: SignUpViewModel = .init()
+    @EnvironmentObject var coordinator: AuthCoordinator.Router
     @Environment(\.presentationMode) private var presentation
+    
+    @StateObject var viewModel: SignUpViewModel = .init()
     
     var body: some View {
         ScrollView {
             VStack(alignment: .leading)  {
-                NavigationLink("", isActive: $viewModel.goToLogin, destination: {
-                                   LoginView(initialEmail: viewModel.email, initialPassword: viewModel.password)
-                               })
-                
                 HStack {
                     Spacer()
                     
@@ -50,7 +48,7 @@ struct SignUpView: View {
                    
                     Button(action: {
                         if viewModel.password == viewModel.confirmPassword {
-                            viewModel.goToLogin = true
+                            coordinator.route(to: \.login, .init(email: viewModel.email, password: viewModel.password))
                         }else {
                             viewModel.loginError = true
                         }
@@ -70,7 +68,6 @@ struct SignUpView: View {
                 
                 Spacer()
             }
-           
         }
         .customNavigationBar(title: "", showBackButton: true, showNavBar: true) {
         presentation.wrappedValue.dismiss()

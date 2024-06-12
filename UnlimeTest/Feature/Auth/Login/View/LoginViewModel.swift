@@ -1,20 +1,22 @@
 //
-//  SignUpView.swift
+//  SignUpViewModel.swift
 //  UnlimeTest
 //
-//  Created by Angelbert Castro on 8/6/24.
+//  Created by Angelbert Castro on 7/6/24.
 //
 
 import SwiftUI
+import Factory
 
-class SignUpViewModel : ObservableObject {
+class LoginViewModel : ObservableObject {
     @Published var loginError: Bool = false
-    @Published var goToLogin: Bool = false
     @Published var showPassword = false
-    @Published var showConfirmPassword = false
-    @Published var isTextValid = false
+    @Published var isTextValid = true
     @Published var isSecurySelected = false
     @Published var isEmailSelected = false
+    
+    var datastore = Container.datastore
+    
     @Published var email : String = "" {
         didSet {
             buttonEnable()
@@ -26,16 +28,21 @@ class SignUpViewModel : ObservableObject {
            buttonEnable()
        }
     }
-    @Published var confirmPassword: String = "" {
+    
+    @Published var isAuthenticated: Bool {
         didSet {
-            buttonEnable()
+            datastore.storeUserKey(isAuthenticated)
         }
     }
     
-     func buttonEnable() {
-         if password.count >= 8 && confirmPassword.count >= 8 && email.count > 0 {
+    init() {
+        self.isAuthenticated = datastore.getUserKey()
+    }
+   
+    func buttonEnable() {
+         if password.count >= 8 && email.count > 0 {
             isTextValid = true
-           
+          
         } else {
             isTextValid = false
         }
