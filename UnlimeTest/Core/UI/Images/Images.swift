@@ -12,6 +12,7 @@ class Images {
     static let ic_failed = "ic_failed"
     static let backgroundImage = "auth_movie"
     static let logo = "logo"
+  
 }
 
 extension Image {
@@ -21,7 +22,10 @@ extension Image {
 }
 
 enum ImageIdentifier: String {
-  case heart = "heart"
-  case eyeSlash = "eye.slash.fill"
-  case eyefill = "eye.fill"
+    case heart = "heart"
+    case eyeSlash = "eye.slash.fill"
+    case eyefill = "eye.fill"
+    case account = "account_fill"
+    case start = "start_fill"
+    case trips = "trips_fill"
 }

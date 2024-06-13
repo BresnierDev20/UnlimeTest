@@ -18,6 +18,12 @@ struct LoginView: View {
     
     var body: some View {
         ScrollView {
+            NavigationBar(showNavBarSingUP: true, onBack: {
+                presentation.wrappedValue.dismiss()
+            })
+             .frame(maxWidth: .infinity)
+             .background(Color.clear)
+            
             VStack(alignment: .leading){
                 HStack {
                     Spacer()
@@ -85,8 +91,6 @@ struct LoginView: View {
                 
                 Spacer()
                 
-            }.customNavigationBar(title: "", showBackButton: true, showNavBar: true) {
-                presentation.wrappedValue.dismiss()
             }
         }
         .background(Color.black)

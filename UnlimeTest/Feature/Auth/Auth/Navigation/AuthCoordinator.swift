@@ -14,7 +14,7 @@ final class AuthCoordinator: NavigationCoordinatable {
     
     @Root var start = makeStart
   
-    var homeCoordinator = Container.shared.homeCoordinator()
+//    var homeCoordinator = Container.shared.homeCoordinator()
     
     @Route(.push) var signup = makeSignUp
     @Route(.push) var login = makeLogin
@@ -22,8 +22,11 @@ final class AuthCoordinator: NavigationCoordinatable {
 }
 
 extension AuthCoordinator {
-    func makeHome() -> HomeCoordinator {
-        return homeCoordinator
+//    func makeHome() -> HomeCoordinator {
+//        return homeCoordinator
+//    }
+    @ViewBuilder func makeHome() -> some View {
+       MainView()
     }
     
     @ViewBuilder func makeStart() -> some View {

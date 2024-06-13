@@ -270,8 +270,8 @@
             filePath = "UnlimeTest/Feature/Auth/Login/View/LoginView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>
@@ -286,8 +286,8 @@
             filePath = "UnlimeTest/Feature/Auth/Login/View/LoginView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>
@@ -302,8 +302,8 @@
             filePath = "UnlimeTest/Feature/Auth/Login/View/LoginView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>
@@ -322,134 +322,6 @@
             endingLineNumber = "32"
             landmarkName = "isAuthenticated"
             landmarkType = "24">
-            <Locations>
-               <Location
-                  uuid = "A39ACA66-E97B-40B2-9E35-025C4BCE8D09 - 2978845bfb898268"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "property wrapper backing initializer of UnlimeTest.LoginViewModel.isAuthenticated : Swift.Bool"
-                  moduleName = "UnlimeTest"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/bresniermoreno/Proyectos/UnlimeTest/UnlimeTest/Feature/Auth/Login/View/LoginViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0">
-               </Location>
-               <Location
-                  uuid = "A39ACA66-E97B-40B2-9E35-025C4BCE8D09 - 6a1328222b4713e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "UnlimeTest.LoginViewModel.isAuthenticated.getter : Swift.Bool"
-                  moduleName = "UnlimeTest"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/bresniermoreno/Proyectos/UnlimeTest/UnlimeTest/Feature/Auth/Login/View/LoginViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0">
-               </Location>
-               <Location
-                  uuid = "A39ACA66-E97B-40B2-9E35-025C4BCE8D09 - a714592a654115d2"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "UnlimeTest.LoginViewModel.isAuthenticated.setter : Swift.Bool"
-                  moduleName = "UnlimeTest"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/bresniermoreno/Proyectos/UnlimeTest/UnlimeTest/Feature/Auth/Login/View/LoginViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "32"
-                  endingLineNumber = "32">
-               </Location>
-               <Location
-                  uuid = "A39ACA66-E97B-40B2-9E35-025C4BCE8D09 - 7d623f9a221413a1"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "UnlimeTest.LoginViewModel.isAuthenticated.modify : Swift.Bool"
-                  moduleName = "UnlimeTest"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/bresniermoreno/Proyectos/UnlimeTest/UnlimeTest/Feature/Auth/Login/View/LoginViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "32"
-                  endingLineNumber = "32">
-               </Location>
-               <Location
-                  uuid = "A39ACA66-E97B-40B2-9E35-025C4BCE8D09 - e896489e06793c73"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "UnlimeTest.LoginViewModel.isAuthenticated.modify : Swift.Bool with unmangled suffix &quot;.resume.0&quot;"
-                  moduleName = "UnlimeTest"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/bresniermoreno/Proyectos/UnlimeTest/%3Ccompiler-generated%3E"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0">
-               </Location>
-               <Location
-                  uuid = "A39ACA66-E97B-40B2-9E35-025C4BCE8D09 - 80fb7c6ed8f7d6fb"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "UnlimeTest.LoginViewModel.$isAuthenticated.getter : Combine.Published&lt;Swift.Bool&gt;.Publisher"
-                  moduleName = "UnlimeTest"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/bresniermoreno/Proyectos/UnlimeTest/UnlimeTest/Feature/Auth/Login/View/LoginViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "32"
-                  endingLineNumber = "32">
-               </Location>
-               <Location
-                  uuid = "A39ACA66-E97B-40B2-9E35-025C4BCE8D09 - cec3dcf54f57874e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "UnlimeTest.LoginViewModel.$isAuthenticated.setter : Combine.Published&lt;Swift.Bool&gt;.Publisher"
-                  moduleName = "UnlimeTest"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/bresniermoreno/Proyectos/UnlimeTest/%3Ccompiler-generated%3E"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0">
-               </Location>
-               <Location
-                  uuid = "A39ACA66-E97B-40B2-9E35-025C4BCE8D09 - 3bd84be2ecf0d05f"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "UnlimeTest.LoginViewModel.$isAuthenticated.modify : Combine.Published&lt;Swift.Bool&gt;.Publisher"
-                  moduleName = "UnlimeTest"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/bresniermoreno/Proyectos/UnlimeTest/%3Ccompiler-generated%3E"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0">
-               </Location>
-               <Location
-                  uuid = "A39ACA66-E97B-40B2-9E35-025C4BCE8D09 - 4a1a9b4a1344063"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "UnlimeTest.LoginViewModel.$isAuthenticated.modify : Combine.Published&lt;Swift.Bool&gt;.Publisher with unmangled suffix &quot;.resume.0&quot;"
-                  moduleName = "UnlimeTest"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/bresniermoreno/Proyectos/UnlimeTest/%3Ccompiler-generated%3E"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -526,8 +398,8 @@
             filePath = "UnlimeTest/Feature/Auth/Login/View/LoginView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>
@@ -542,10 +414,218 @@
             filePath = "UnlimeTest/Feature/Auth/Login/View/LoginView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
             landmarkName = "body"
             landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "385DEB2F-E27C-409D-B6CD-F83DAE62BD9B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UnlimeTest/Feature/Dashboard/Main/View/MainView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7C5F6528-9628-4B23-8300-06ABFD6C0B6E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UnlimeTest/Feature/Dashboard/Main/View/MainView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6BD1FDEB-ABE6-4564-BED5-C821D01D8A49"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UnlimeTest/Feature/Dashboard/Main/View/MainView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9304B984-53D4-4974-876B-B14B7CDE6402"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UnlimeTest/Feature/Dashboard/Main/View/MainView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "16D0B8A6-BEF4-4155-A03C-B1C0C670D6E0"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UnlimeTest/Feature/Dashboard/Main/View/MainView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B629A0E5-CEAD-4B79-A0DD-9856801833B1"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UnlimeTest/Feature/Dashboard/Main/View/MainView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "582CBCDC-25E1-4B6C-A4FE-FF48E5373721"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UnlimeTest/Feature/Dashboard/Main/View/MainView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FC024AE2-504E-4248-8683-3DC2CC723302"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UnlimeTest/Feature/Dashboard/Main/View/MainView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C9F8C7B3-A33F-4E9F-A02F-4C6BA89B412C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UnlimeTest/Feature/Dashboard/Main/Navigation/DashboardCoordinator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "DashboardCoordinator"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AFD7A6C8-78AA-443B-9C4F-1190E4CF8A09"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UnlimeTest/Feature/Dashboard/Main/Navigation/DashboardCoordinator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "DashboardCoordinator"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3D34317C-67B8-4C45-83A5-A83860BFE1D5"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UnlimeTest/Feature/Dashboard/Main/Navigation/DashboardCoordinator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "makeStartTab(isActive:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C402B881-BD75-4FE3-A02E-703563CFEECA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UnlimeTest/Feature/Dashboard/Main/Navigation/DashboardCoordinator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "makeTripsTab(isActive:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C69EE0E2-0C0B-4156-B5CC-3BF7411BD6B2"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UnlimeTest/Feature/Dashboard/Main/Navigation/DashboardCoordinator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
+            landmarkName = "makeAccountTab(isActive:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

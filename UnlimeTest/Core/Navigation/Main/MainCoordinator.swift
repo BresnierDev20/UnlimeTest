@@ -11,18 +11,16 @@ import Factory
 
 final class MainCoordinator: NavigationCoordinatable {
   let stack = NavigationStack(initial: \MainCoordinator.start)
-
     var authCoordinator = Container.shared.authCoordinator()
-    var homeCoordinator = Container.shared.homeCoordinator()
+    var dashboardCoordinator = Container.shared.dashboardCoordinator()
     
     @Root var start = makeAuth
-    
 }
 
 extension MainCoordinator {
   func makeAuth() -> some View {
       if Container.datastore.getUserKey() {
-          return AnyView(homeCoordinator.view())
+          return AnyView(MainView())
       }else {
           return AnyView(authCoordinator.view())
       }

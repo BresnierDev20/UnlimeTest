@@ -23,5 +23,4 @@ final class MainNavigationCoordinator: NavigationCoordinatable {
   deinit {
     print("Deinit Main")
   }
-    
 }
