@@ -21,51 +21,43 @@ struct InputField: View {
     VStack(alignment: .leading, spacing: 4) {
       Text(text)
         .customFont(.semiBold, size: 16)
-          .foregroundColor(.white)
+        .foregroundColor(.titleBlue)
           .padding(.leading, Constants.paddingLeading)
-
-      TextField("", text: $value)
-        .foregroundColor(.black)
-        .textInputAutocapitalization(.never)
-        .disableAutocorrection(true)
-        .textFieldStyle(CustomTextFieldStyle(value: $value, selected: isFieldSelected, isTextValid: true,description: description, sizeText: 0))
-        .focused($isTextFieldFocused)
-        .onTapGesture {
-          isTextFieldFocused = true
-          onTapGesture()
+        HStack {
+            Image(.iconEmail)
+                .foregroundColor(.titleBlue)
+                
+            TextField("", text: $value)
+ 
+                .foregroundColor(.titleBlue)
+                .textInputAutocapitalization(.never)
+                .disableAutocorrection(true)
+                .styleAsInput($value, placeholder: description, hintColor: .gray, sizeText: 0)
+                .focused($isTextFieldFocused)
+                .onTapGesture {
+                    isTextFieldFocused = true
+                    onTapGesture()
+                }
+                .onSubmit {
+                    onTapSelect()
+                }
         }
-        .onSubmit {
-          onTapSelect()
-        }
+        .padding(.horizontal, 20)
+        .padding(.vertical, 20)
+        .overlay(
+            RoundedRectangle(cornerRadius: 8)
+                .stroke(Color.lineBlue, lineWidth: isFieldSelected ? 2 : 0)
+        )
+        .background(Color.hsLightBlue)
+        .cornerRadius(8)
 
       if !isSelectd && value.count >= 1 {
         Text("")
           .font(.caption)
-          .foregroundColor(.red)
+          .foregroundColor(.blue)
           .padding(.leading, Constants.paddingLeading)
       }
     }.padding(.top,4)
-  }
-}
-
-struct CustomTextFieldStyle: TextFieldStyle {
-  @Binding var value: String
-  var selected: Bool
-  var isTextValid: Bool
-  var description: String
-  var sizeText: CGFloat
-
-  func _body(configuration: TextField<Self._Label>) -> some View {
-    configuration
-      .padding(.horizontal, 20)
-      .padding(.vertical, 20)
-      .background(
-        RoundedRectangle(cornerRadius: 8)
-            .stroke(isTextValid ? Color.black : Color.red, lineWidth: selected ? 2 : 0)
-      )
-      .styleAsInput($value, placeholder: description, hintColor: .gray, sizeText: sizeText)
-      .background(selected ? Color.white : Color.white.opacity(0.8))
-      .cornerRadius(8)
   }
 }
 
@@ -122,9 +114,9 @@ struct InputSecureField: View {
             VStack(alignment: .leading, spacing: 4)  {
                 Text(title)
                     .customFont(.semiBold, size: Constants.sizeSixteen)
-                    .foregroundColor(.white)
+                    .foregroundColor(.titleBlue)
                     .padding(.leading, 4)
-                    .padding(.bottom,-10)
+                    .padding(.bottom,0)
                 
                 if showPassword {
                     PasswordField(
@@ -180,23 +172,36 @@ struct PasswordField: View {
     @FocusState var isTextFieldFocused: Bool
 
     var body: some View {
-        TextField("", text: $password)
-            .foregroundColor(.black)
-            .disableAutocorrection(true)
-            .textFieldStyle(CustomTextFieldStyle(value: $password, selected: isSecurySelected, isTextValid: isTextValid, description: description, sizeText: 0))
-            .focused($isTextFieldFocused)
-            .onTapGesture {
-                isTextFieldFocused = true
-                onFieldTapGesture()
-            }
-            .onSubmit {
-                onFieldTapSelect()
-            }
-            .onChange(of: password) { _ in
-                onChange()
-            }
-            .overlay(ShowHidePasswordButton(showPassword: showPassword, onButtonTapGesture: onButtonTapGesture))
-            .padding(.top, 12)
+        HStack {
+            Image(.iconKey)
+                .foregroundColor(.titleBlue)
+                
+            TextField("", text: $password)
+                .foregroundColor(.titleBlue)
+                .disableAutocorrection(true)
+                .styleAsInput($password, placeholder: description, hintColor: .gray, sizeText: 0)
+                .focused($isTextFieldFocused)
+                .onTapGesture {
+                    isTextFieldFocused = true
+                    onFieldTapGesture()
+                }
+                .onSubmit {
+                    onFieldTapSelect()
+                }
+                .onChange(of: password) { _ in
+                    onChange()
+                }
+        }
+        .padding(.horizontal, 20)
+        .padding(.vertical, 20)
+        .overlay(ShowHidePasswordButton(showPassword: showPassword, onButtonTapGesture: onButtonTapGesture))
+        .overlay(
+            RoundedRectangle(cornerRadius: 8)
+                .stroke(isTextValid ? Color.lineBlue : Color.lineBlue, lineWidth: isSecurySelected ? 2 : 0)
+               
+        )
+        .background(Color.hsLightBlue)
+        .cornerRadius(8)
     }
 }
 
@@ -213,23 +218,37 @@ struct SecurePasswordField: View {
     @FocusState var isTextFieldFocused: Bool
 
     var body: some View {
-        SecureField("", text: $password)
-            .foregroundColor(.black)
-            .disableAutocorrection(true)
-            .textFieldStyle(CustomTextFieldStyle(value: $password, selected: isSecurySelected, isTextValid: isTextValid, description: description, sizeText: 0))
-            .focused($isTextFieldFocused)
-            .onTapGesture {
-                isTextFieldFocused = true
-                onFieldTapGesture()
-            }
-            .onSubmit {
-                onFieldTapSelect()
-            }
-            .onChange(of: password) { _ in
-                onChange()
-            }
-            .overlay(ShowHidePasswordButton(showPassword: showPassword, onButtonTapGesture: onButtonTapGesture))
-            .padding(.top, 12)
+        
+        HStack {
+            Image(.iconKey)
+                .foregroundColor(.titleBlue)
+            
+            SecureField("", text: $password)
+                .foregroundColor(.titleBlue)
+                .disableAutocorrection(true)
+                .styleAsInput($password, placeholder: description, hintColor: .gray, sizeText: 0)
+                .focused($isTextFieldFocused)
+                .onTapGesture {
+                    isTextFieldFocused = true
+                    onFieldTapGesture()
+                }
+                .onSubmit {
+                    onFieldTapSelect()
+                }
+                .onChange(of: password) { _ in
+                    onChange()
+                }
+        }
+        .padding(.horizontal, 20)
+        .padding(.vertical, 20)
+        .overlay(ShowHidePasswordButton(showPassword: showPassword, onButtonTapGesture: onButtonTapGesture))
+        .overlay(
+            RoundedRectangle(cornerRadius: 8)
+                .stroke(isTextValid ? Color.lineBlue : Color.lineBlue, lineWidth: isSecurySelected ? 2 : 0)
+        )
+        .background(Color.hsLightBlue)
+        .cornerRadius(8)
+       
     }
 }
 
@@ -243,6 +262,7 @@ struct ShowHidePasswordButton: View {
         }) {
             HStack {
                 Spacer()
+                
                 Image
                     .fromSystem(showPassword ? .eyeSlash : .eyefill)
                     .resizable()

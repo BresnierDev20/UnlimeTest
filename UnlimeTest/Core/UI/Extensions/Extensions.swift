@@ -49,8 +49,8 @@ extension View {
     self.font(.custom(font.rawValue, size: size, relativeTo: .headline))
   }
     
-  func filledStyle(isDisabled: Bool) -> some View {
-    modifier(PrimaryButtonModifier(isDisabled: isDisabled))
+    func filledStyle(isDisabled: Bool, colorIsEnable: Color, colorIsDisabled: Color) -> some View {
+        modifier(PrimaryButtonModifier(isDisabled: isDisabled, colorIsEnable: colorIsEnable, colorIsDisabled: colorIsDisabled))
   }
 }
 

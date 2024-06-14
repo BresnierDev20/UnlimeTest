@@ -12,68 +12,105 @@ struct AuthView: View {
     @EnvironmentObject var coordinator: AuthCoordinator.Router
     
     var body: some View {
-//        NavigationView {
-            ZStack {
-                Image(Images.backgroundImage)
-                    .resizable()
-                    .scaledToFill()
-                    .edgesIgnoringSafeArea(.all)
+        ZStack {
+            Image("launch")
+                .resizable()
+                .clipped()
+            
+            VStack {
+                Spacer()
                 
                 VStack {
-                    Image(Images.logo)
-                        .resizable()
-                        .scaledToFit()
-                        .padding(.bottom,Constants.imagesBottom)
-                        .frame(width: Constants.imagesnWidth, height: Constants.imagesHeigth)
-                    
-                    Spacer()
-                    
-                    VStack {
-                        HStack {
-                            Text("Discover the world of cinema with MovieMania. The world's largest movie streaming platform is now on your mobile device. Explore and enjoy now!")
-                                .customFont(.extraLight, size: 14)
-                                .foregroundColor(.white)
+                    VStack{
+                        Button(action: {
+                            // Acción para iniciar sesión con Google
+                        }) {
+                            HStack {
+                                Image(Images.ic_apple)
+                                
+                                Text("Inicia sesión con Apple")
+                                    .customFont(.bold, size: 14)
+                                    .foregroundColor(.black)
+                            }
+                            .frame(maxWidth: .infinity)
+                            .padding()
                         }
-                        .padding(EdgeInsets(top: 0, leading: 50, bottom: 0, trailing: 50))
-                        .frame(width: 450)
+                        .filledStyle(isDisabled: true, colorIsEnable: .hsLightBlue, colorIsDisabled: .hsLightBlue)
+                     
+                        Button(action: {
+                            // Acción para iniciar sesión con Google
+                        }) {
+                            HStack {
+                                Image(Images.ic_facebook)
+                                
+                                Text("Inicia sesión con Facebook")
+                                    .customFont(.bold, size: 14)
+                                    .foregroundColor(.black)
+                            }
+                            .frame(maxWidth: .infinity)
+                            .padding()
+                        }
+                        .filledStyle(isDisabled: true, colorIsEnable: .hsLightBlue, colorIsDisabled: .hsLightBlue)
+                        
+                        Button(action: {
+                            // Acción para iniciar sesión con Google
+                        }) {
+                            HStack {
+                                Image(Images.ic_google)
+                                
+                                Text("Inicia sesión con Google")
+                                    .customFont(.bold, size: 14)
+                                    .foregroundColor(.black)
+                            }
+                            .frame(maxWidth: .infinity)
+                            .padding()
+                        }
+                        .filledStyle(isDisabled: true, colorIsEnable: .hsLightBlue, colorIsDisabled: .hsLightBlue)
+                        
+                        SingUpDivider(label: "Or")
                         
                         Button(action: {
                             coordinator.route(to: \.signup)
                         }) {
-                            HStack {
-                                Text("Sign in")
-                                    .customFont(.medium, size: 18)
-                            }
-                            .frame(width: 340, height: 50)
+                            Text("Crear cuenta")
+                                .customFont(.bold, size: 18)
+                                .foregroundColor(.white)
+                                .frame(maxWidth: .infinity)
+                                .padding()
                         }
-                        .padding()
-                        .filledStyle(isDisabled: true)
+                        .filledStyle(isDisabled: true, colorIsEnable: .hsBlue, colorIsDisabled: .hsBlue.opacity(0.8))
                         
-                        Button(action: {
-                            coordinator.route(to: \.login, .init(email: "", password: ""))
-                        }) {
-                            HStack {
-                                Text("Login")
-                                    .customFont(.medium, size: 16)
-                                
-                            }
-                            .frame(width: Constants.textLoginWidth, height: Constants.textLoginHeigth)
+                        VStack {
+                            Text("¿Ya tienes una cuenta?")
+                                .padding(.bottom, Constants.paddingBottom)
                             
-                        }.filledStyle(isDisabled: true)
-                    }.padding(.bottom,12)
+                            Button(action: {
+                                coordinator.route(to: \.login, .init(email: "", password: ""))
+                            }) {
+                                Text("Iniciar Sesión")
+                                    .foregroundColor(.blue)
+                            }
+                        }
+                        .padding(.top, Constants.paddingTop)
+                    }
+                    .padding()
                 }
+                .frame(height: Constants.containerHeigth)
+                .background(Color.white)
+                .clipShape(CustomCorner(corners: [.topLeft, .topRight], size: Constants.clipShapeSize))
+                .ignoresSafeArea(.all, edges: .bottom)
             }
-//        }
+        }
+        .ignoresSafeArea(.all, edges: .all)
     }
 }
 
 extension AuthView {
     class Constants {
-        static let imagesBottom: CGFloat = 60
-        static let imagesnWidth: CGFloat = 200
-        static let imagesHeigth: CGFloat = 200
-        static let textLoginWidth: CGFloat = 340
-        static let textLoginHeigth: CGFloat = 50
+        static let containerHeigth: CGFloat = 450
+        static let clipShapeSize: CGFloat = 30
+        static let paddingTop: CGFloat = 20
+        static let paddingBottom: CGFloat = 8
     }
 }
 

@@ -12,6 +12,11 @@ class Images {
     static let ic_failed = "ic_failed"
     static let backgroundImage = "auth_movie"
     static let logo = "logo"
+    static let ic_apple = "logo_apple"
+    static let ic_facebook = "logo_facebook"
+    static let ic_google = "logo_google"
+    static let ic_key = "icon_key"
+    static let ic_email = "icon_email"
   
 }
 

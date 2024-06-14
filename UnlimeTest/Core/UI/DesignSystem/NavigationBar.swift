@@ -21,8 +21,8 @@ struct NavigationBar: View {
                         Image(systemName: "chevron.left")
                             .resizable()
                             .scaledToFit()
-                            .frame(width: 15, height: 15)
-                            .foregroundColor(.white)
+                            .frame(width: 20, height: 20)
+                            .foregroundColor(.black)
                             .padding()
                     }
                     Spacer()
