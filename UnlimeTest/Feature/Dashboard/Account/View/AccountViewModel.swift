@@ -21,9 +21,11 @@ class AccountViewViewModel : ObservableObject {
     func logout() {
         datastore.deleteUserKey()
         
-          self.authCoordinator
-            .popToRoot()
-            .route(to: \.auth)
+        DispatchQueue.main.async {
+            self.authCoordinator
+              .popToRoot()
+              .route(to: \.auth)
+        }
     }
 }
 
