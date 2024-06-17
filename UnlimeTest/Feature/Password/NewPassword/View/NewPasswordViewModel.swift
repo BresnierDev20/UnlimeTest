@@ -1,22 +1,17 @@
 //
-//  SignUpViewModel.swift
+//  NewPasswordViewModel.swift
 //  UnlimeTest
 //
-//  Created by Angelbert Castro on 7/6/24.
+//  Created by Bresnier Moreno on 15/6/24.
 //
 
-import SwiftUI
-import Factory
+import Foundation
 
-class LoginViewModel : ObservableObject {
-    @Published var loginError: Bool = false
+class NewPasswordViewModel : ObservableObject {
     @Published var showPassword = false
-    @Published var isTextValid = false
+    @Published var isTextValid = true
     @Published var isSecurySelected = false
     @Published var isEmailSelected = false
-    @Published var isSheetPresented = false
-    
-    var datastore = Container.datastore
     
     @Published var email : String = "" {
         didSet {

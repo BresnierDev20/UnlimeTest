@@ -13,18 +13,20 @@ final class AuthCoordinator: NavigationCoordinatable {
     let stack = NavigationStack(initial: \AuthCoordinator.start)
     
     @Root var start = makeStart
-  
-//    var homeCoordinator = Container.shared.homeCoordinator()
-    
+ 
+    @Route(.push) var confirmation = makePasswordConfirmation
     @Route(.push) var signup = makeSignUp
+    @Route(.push) var newPassword = makeNewPassWord
     @Route(.push) var login = makeLogin
     @Route(.push) var home = makeHome
+    @Route(.modal) var modalChangePassword = makeModalScreen
 }
 
 extension AuthCoordinator {
-//    func makeHome() -> HomeCoordinator {
-//        return homeCoordinator
-//    }
+    @ViewBuilder func makeNewPassWord() -> some View {
+        NewPasswordView()
+    }
+    
     @ViewBuilder func makeHome() -> some View {
        MainView()
     }
@@ -39,5 +41,13 @@ extension AuthCoordinator {
 
     @ViewBuilder func makeSignUp() -> some View {
         SignUpView()
+    }
+    
+    @ViewBuilder func makeModalScreen() -> some View {
+        ChangePasswordView()
+    }
+    
+    @ViewBuilder func makePasswordConfirmation() -> some View {
+        PasswordConfirmationView()
     }
 }

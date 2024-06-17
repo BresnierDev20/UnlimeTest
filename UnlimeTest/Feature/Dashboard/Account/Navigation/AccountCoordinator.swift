@@ -13,11 +13,16 @@ final class AccountCoordinator: NavigationCoordinatable {
     let stack = NavigationStack(initial: \AccountCoordinator.start)
     
     @Root var start = makeStart
+    @Route(.push) var edit = makeEditProfile
   
 }
 
 extension AccountCoordinator {
     @ViewBuilder func makeStart() -> some View {
         AccountView()
+    }
+    
+    @ViewBuilder func makeEditProfile() -> some View {
+        EditProfileView()
     }
 }

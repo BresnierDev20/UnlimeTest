@@ -8,67 +8,77 @@
 import SwiftUI
 
 struct InputField: View {
-  var text: String
-  @Binding var value: String
-  var description: String
-  var isFieldSelected: Bool
-  var isSelectd: Bool
-  var onTapGesture: () -> Void
-  var onTapSelect: () -> Void
-  @FocusState var isTextFieldFocused: Bool
+    var text: String
+    @Binding var value: String
+    var description: String
+    var isFieldSelected: Bool
+    var isSelectd: Bool
+    var onTapGesture: () -> Void
+    var onTapSelect: () -> Void
+    var colorTxField: Color
+    var visibilityIcon: Bool
+    var keyboardType: UIKeyboardType?
+    var textContentType: UITextContentType?
+    
+    
+    @FocusState var isTextFieldFocused: Bool
 
-  var body: some View {
-    VStack(alignment: .leading, spacing: 4) {
-      Text(text)
-        .customFont(.semiBold, size: 16)
-        .foregroundColor(.titleBlue)
-          .padding(.leading, Constants.paddingLeading)
-        HStack {
-            Image(.iconEmail)
+    var body: some View {
+        VStack(alignment: .leading, spacing: 4) {
+            Text(text)
+                .customFont(.semiBold, size: 16)
                 .foregroundColor(.titleBlue)
-                
-            TextField("", text: $value)
- 
-                .foregroundColor(.titleBlue)
-                .textInputAutocapitalization(.never)
-                .disableAutocorrection(true)
-                .styleAsInput($value, placeholder: description, hintColor: .gray, sizeText: 0)
-                .focused($isTextFieldFocused)
-                .onTapGesture {
-                    isTextFieldFocused = true
-                    onTapGesture()
+                .padding(.leading, Constants.paddingLeading)
+        
+            HStack {
+                if visibilityIcon {
+                    Image(.iconEmail)
+                        .foregroundColor(.titleBlue)
                 }
-                .onSubmit {
-                    onTapSelect()
-                }
-        }
-        .padding(.horizontal, 20)
-        .padding(.vertical, 20)
-        .overlay(
-            RoundedRectangle(cornerRadius: 8)
-                .stroke(Color.lineBlue, lineWidth: isFieldSelected ? 2 : 0)
-        )
-        .background(Color.hsLightBlue)
-        .cornerRadius(8)
+              
+                TextField("", text: $value)
+                    .foregroundColor(.titleBlue)
+                    .keyboardType(keyboardType ?? .default)
+                    .textContentType(textContentType ?? .none)
+                    .textInputAutocapitalization(.never)
+                    .disableAutocorrection(true)
+                    .styleAsInput($value, placeholder: description, hintColor: .gray, sizeText: 0)
+                    .focused($isTextFieldFocused)
+                    .onTapGesture {
+                        isTextFieldFocused = true
+                        onTapGesture()
+                    }
+                    .onSubmit {
+                        onTapSelect()
+                    }
+            }
+            .padding(.horizontal, 20)
+            .padding(.vertical, 20)
+            .overlay(
+                RoundedRectangle(cornerRadius: 8)
+                    .stroke(Color.lineBlue, lineWidth: isFieldSelected ? 3 : 0)
+            )
+            .background(colorTxField)
+            .cornerRadius(8)
 
-      if !isSelectd && value.count >= 1 {
-        Text("")
-          .font(.caption)
-          .foregroundColor(.blue)
-          .padding(.leading, Constants.paddingLeading)
-      }
-    }.padding(.top,4)
-  }
+            if !isSelectd && value.count >= 1 {
+                Text("")
+                    .font(.caption)
+                    .foregroundColor(.blue)
+                    .padding(.leading, Constants.paddingLeading)
+            }
+        }.padding(.top,4)
+    }
 }
 
 struct TextInputModifier : ViewModifier {
-  @FocusState var focus
-  let placeholder: String
-  @Binding var text: String
-  let hintColor: Color
-  let sizeText: CGFloat
+    @FocusState var focus
+    let placeholder: String
+    @Binding var text: String
+    let hintColor: Color
+    let sizeText: CGFloat
 
-  init(_ placeholder: String = "", value: Binding<String> = .constant(""), hintColor: Color = .black, _ size : CGFloat) {
+    init(_ placeholder: String = "", value: Binding<String> = .constant(""), hintColor: Color = .titleBlue, _ size : CGFloat) {
     self.placeholder = placeholder
     self._text = value
     self.hintColor = hintColor
@@ -80,8 +90,8 @@ struct TextInputModifier : ViewModifier {
       if text.isEmpty && !focus {
         HStack {
           Text(placeholder)
-            .customFont(.regular, size: 16)
-            .foregroundColor(hintColor)
+            .customFont(.bold, size: 16)
+            .foregroundColor(.titleBlue)
             .padding(.leading, 20)
           Spacer()
         }
@@ -179,7 +189,7 @@ struct PasswordField: View {
             TextField("", text: $password)
                 .foregroundColor(.titleBlue)
                 .disableAutocorrection(true)
-                .styleAsInput($password, placeholder: description, hintColor: .gray, sizeText: 0)
+                .styleAsInput($password, placeholder: description, hintColor: .titleBlue, sizeText: 0)
                 .focused($isTextFieldFocused)
                 .onTapGesture {
                     isTextFieldFocused = true
@@ -197,7 +207,7 @@ struct PasswordField: View {
         .overlay(ShowHidePasswordButton(showPassword: showPassword, onButtonTapGesture: onButtonTapGesture))
         .overlay(
             RoundedRectangle(cornerRadius: 8)
-                .stroke(isTextValid ? Color.lineBlue : Color.lineBlue, lineWidth: isSecurySelected ? 2 : 0)
+                .stroke(isTextValid ? Color.lineBlue : Color.lineBlue, lineWidth: isSecurySelected ? 3 : 0)
                
         )
         .background(Color.hsLightBlue)

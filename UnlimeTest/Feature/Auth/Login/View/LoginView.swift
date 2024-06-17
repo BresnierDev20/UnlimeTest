@@ -35,12 +35,10 @@ struct LoginView: View {
                 .clipped()
             
             VStack {
-                NavigationBar(showNavBarSingUP: true, onBack: {
+                NavigationBar(style: .signUp, onBack: {
                     presentation.wrappedValue.dismiss()
                 })
-                 .frame(maxWidth: .infinity)
-                 .background(Color.clear)
-                 .padding(.top, 8)
+                .padding(.top, 20)
                 
                 Spacer()
                 
@@ -55,34 +53,43 @@ struct LoginView: View {
                         InputField(text: "Email", value: $viewModel.email , description: "Enter your email", isFieldSelected: viewModel.isEmailSelected, isSelectd: true,onTapGesture: {
                                     viewModel.isEmailSelected = true
                                     viewModel.isSecurySelected = false
-                        }, onTapSelect: { viewModel.isEmailSelected = false})
+                        }, onTapSelect: {
+                            viewModel.isEmailSelected = false
+                            
+                        }, colorTxField: .hsLightBlue, visibilityIcon: true, keyboardType: .emailAddress, textContentType: .emailAddress)
                         
                         password
                         
                         Button(action: {
-                            if viewModel.password == navigationData.password &&  viewModel.email == navigationData.email {
+//                            if viewModel.password == navigationData.password &&  viewModel.email == navigationData.email {
                                 coordinator.route(to: \.home)
-                                viewModel.isAuthenticated = true
+                                viewModel.datastore.storeUserKey(true)
 
-                            }else {
-                                viewModel.isAuthenticated = false
-                                viewModel.loginError = true
-                            }
+//                            }else {
+//                                viewModel.loginError = true
+//                            }
                         }) {
                             HStack {
                                 Text("Ingresar")
                                     .customFont(.bold, size: 18)
                                     .foregroundColor(.white)
                                     .frame(maxWidth: .infinity)
-                                    .padding()
+                                    .frame(height: 55)
                             }
                         }
-                        .filledStyle(isDisabled: viewModel.isTextValid, colorIsEnable: .hsBlue, colorIsDisabled: .hsBlue.opacity(0.8))
+                        .filledStyle(isDisabled: viewModel.isTextValid, colorIsEnable: .hsBlue, colorIsDisabled: .hsDisable)
                         .padding(.top,12)
                         
                         Text("Forgot your password")
                             .foregroundColor(.hsBlue)
                             .font(.footnote)
+                            .onTapGesture {
+                                viewModel.isSheetPresented = true
+                            }
+                            .sheet(isPresented: $viewModel.isSheetPresented) {
+                                ChangePasswordView()
+                            }
+                            .padding(.top,10)
                         
                         Spacer()
                         
@@ -90,7 +97,6 @@ struct LoginView: View {
                             Text("¿Nuevo en Viaja Facil?")
                                 .padding(.bottom, 8)
                                 
-                            
                             Text("Crear cuenta")
                                 .foregroundColor(.hsBlue)
                                 .bold()
@@ -98,7 +104,7 @@ struct LoginView: View {
                                     coordinator.route(to: \.signup)
                                 }
                         }
-                        .padding(.bottom,20)
+                        Spacer()
                     }
                     .padding()
                 }

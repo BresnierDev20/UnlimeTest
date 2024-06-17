@@ -14,6 +14,7 @@ class SignUpViewModel : ObservableObject {
     @Published var isTextValid = false
     @Published var isSecurySelected = false
     @Published var isEmailSelected = false
+    @Published var isNameSelected = false
     
     @Published var email : String = "" {
         didSet {
@@ -34,7 +35,7 @@ class SignUpViewModel : ObservableObject {
     }
     
      func buttonEnable() {
-         if password.count >= 8 && name.count >= 8 && email.count > 0 {
+         if password.count >= 8 && name.count >= 1 && email.count > 1 {
             isTextValid = true
            
         } else {

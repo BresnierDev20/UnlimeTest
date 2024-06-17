@@ -20,7 +20,7 @@ struct PrimaryButtonModifier : ViewModifier {
             .customFont(.regular, category: .medium)
             .foregroundColor(isDisabled ? .white : .black)
             .disabled(!isDisabled)
-            .buttonStyle(PrimaryButtonStyle(isDisabled: isDisabled,colorIsEnable: colorIsEnable, colorIsDisabled: colorIsEnable, cornerRadius: cornerRadius)
+            .buttonStyle(PrimaryButtonStyle(isDisabled: isDisabled,colorIsEnable: colorIsEnable, colorIsDisabled: colorIsDisabled, cornerRadius: cornerRadius)
       
     )
   }

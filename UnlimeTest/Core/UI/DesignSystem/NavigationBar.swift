@@ -6,14 +6,24 @@
 //
 
 import SwiftUI
+ 
+enum NavigationBarStyle {
+    case signUp
+    case profile
+    case account
+    case editProfile
+}
 
 struct NavigationBar: View {
-    var showNavBarSingUP: Bool
+    var style: NavigationBarStyle
     var onBack: (() -> Void)?
+    var onSave: (() -> Void)?
+    var onEdit: (() -> Void)?
     
     var body: some View {
         VStack {
-            if showNavBarSingUP  {
+            switch style {
+            case .signUp:
                 HStack {
                     Button(action: {
                         onBack?()
@@ -29,7 +39,7 @@ struct NavigationBar: View {
                 }
                 .padding(.vertical, 12)
                 .background(Color.clear)
-            }else {
+            case .profile:
                 HStack {
                     Spacer()
                     Image("profile")
@@ -37,10 +47,77 @@ struct NavigationBar: View {
                         .scaledToFill()
                         .frame(width: 30, height: 30)
                         .onTapGesture {}
+                        .padding()
+                }
+            case .account:
+                HStack {
+                    Button(action: {
+                        onBack?()
+                    }) {
+                        HStack{
+                            Image(systemName: "chevron.left")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 20, height: 20)
+                               
+                               
+                            Text("Atras")
+                                .customFont(.semiBold, size: 14)
+                                .foregroundColor(.white)
+                            
+                        }
+                        .foregroundColor(.white)
+                        .padding()
+                    }
+                    
+                    Spacer()
+                    
+                    Text("Mi cuenta")
+                        .customFont(.bold, size: 16)
+                        .foregroundColor(.white)
+                    
+                    Spacer()
+                   
+                    
+                    Text("Editar")
+                        .customFont(.semiBold, size: 14)
+                        .foregroundColor(.white)
+                        .padding()
+                        .onTapGesture {
+                            onEdit?()
+                        }
+                }
+            case .editProfile:
+                HStack {
+                    Button(action: {
+                        onBack?()
+                    }) {
+                        HStack{
+                            Image(systemName: "chevron.left")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 20, height: 20)
+                               
+                            Text("Atras")
+                                .customFont(.semiBold, size: 14)
+                                .foregroundColor(.white)
+                            
+                        }
+                        .foregroundColor(.white)
+                        .padding()
+                    }
+                    
+                    Spacer()
+                    
+                    Text("Guardar")
+                        .customFont(.semiBold, size: 14)
+                        .foregroundColor(.white)
+                        .padding()
+                        .onTapGesture {
+                            onSave?()
+                        }
                 }
             }
         }
-        .padding(.horizontal, 8)
-        .padding(.vertical, 8)
     }
 }

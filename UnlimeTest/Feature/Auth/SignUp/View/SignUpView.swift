@@ -21,7 +21,7 @@ struct SignUpView: View {
                 .clipped()
             
             VStack {
-                NavigationBar(showNavBarSingUP: true, onBack: {
+                NavigationBar(style: .signUp, onBack: {
                     presentation.wrappedValue.dismiss()
                 })
                  .frame(maxWidth: .infinity)
@@ -38,19 +38,21 @@ struct SignUpView: View {
                         
                         Spacer()
                         
-                        InputField(text: "Nombre", value: $viewModel.name , description: "Enter your name", isFieldSelected: viewModel.isEmailSelected, isSelectd: true, onTapGesture: {
-                                viewModel.isEmailSelected = true
+                        InputField(text: "Nombre", value: $viewModel.name , description: "Enter your name", isFieldSelected: viewModel.isNameSelected, isSelectd: true, onTapGesture: {
+                                viewModel.isNameSelected = true
                                 viewModel.isSecurySelected = false
+                                viewModel.isEmailSelected = false
                         }, onTapSelect: {
-                            viewModel.isEmailSelected = false
-                        })
+                            viewModel.isNameSelected = false
+                        }, colorTxField: .hsLightBlue, visibilityIcon: true)
                         
                         InputField(text: "Email", value: $viewModel.email , description: "Enter your Email", isFieldSelected: viewModel.isEmailSelected, isSelectd: true, onTapGesture: {
-                                viewModel.isEmailSelected = true
+                                viewModel.isNameSelected = false
                                 viewModel.isSecurySelected = false
+                                viewModel.isEmailSelected = true
                         }, onTapSelect: {
                             viewModel.isEmailSelected = false
-                        })
+                        }, colorTxField: .hsLightBlue, visibilityIcon: true)
                         
                         password
                         
@@ -58,15 +60,13 @@ struct SignUpView: View {
                              coordinator.route(to: \.login, .init(email: viewModel.email, password: viewModel.password))
                            
                         }) {
-                            HStack {
-                                Text("Crear cuenta")
-                                    .foregroundColor(.white)
-                                    .customFont(.medium, size: 18)
-                            }
-                            .frame(maxWidth: .infinity)
-                            .frame(height: 70)
+                            Text("Crear cuenta")
+                                .foregroundColor(.white)
+                                .customFont(.medium, size: 18)
+                                .frame(maxWidth: .infinity)
+                                .frame(height: 55)
                         }
-                        .filledStyle(isDisabled: viewModel.isTextValid, colorIsEnable: .hsBlue, colorIsDisabled: .hsBlue.opacity(0.8))
+                        .filledStyle(isDisabled: viewModel.isTextValid, colorIsEnable: .hsBlue, colorIsDisabled: .hsDisable)
                         .padding(.top,25)
                         
                         HStack {
@@ -119,8 +119,9 @@ struct SignUpView: View {
           description: "Enter password",
           txtMessages: "",
           onFieldTapGesture: {
-            viewModel.isEmailSelected = false
-            viewModel.isSecurySelected = true
+              viewModel.isNameSelected = false
+              viewModel.isSecurySelected = true
+              viewModel.isEmailSelected = false
           },
           onButtonTapGesture: {
             viewModel.showPassword.toggle()

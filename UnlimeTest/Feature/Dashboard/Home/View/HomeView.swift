@@ -11,10 +11,9 @@ struct HomeView: View {
     @StateObject var viewModel: HomeViewModel = .init()
    
     var body: some View {
-        NavigationBar(showNavBarSingUP: false, onBack: {})
+        NavigationBar(style: .profile, onBack: {})
         .frame(maxWidth: .infinity)
-        .background(Color.white)
-        
+      
         VStack(alignment: .leading) {
             Text("Descubre")
                 .font(.largeTitle)

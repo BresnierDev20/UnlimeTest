@@ -76,7 +76,7 @@ struct AuthView: View {
                                 .customFont(.bold, size: 18)
                                 .foregroundColor(.white)
                                 .frame(maxWidth: .infinity)
-                                .padding()
+                                .frame(height: 55)
                         }
                         .filledStyle(isDisabled: true, colorIsEnable: .hsBlue, colorIsDisabled: .hsBlue.opacity(0.8))
                         
@@ -101,6 +101,7 @@ struct AuthView: View {
                 .ignoresSafeArea(.all, edges: .bottom)
             }
         }
+        .navigationBarHidden(true)
         .ignoresSafeArea(.all, edges: .all)
     }
 }
